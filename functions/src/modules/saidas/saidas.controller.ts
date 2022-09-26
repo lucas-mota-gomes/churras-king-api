@@ -12,15 +12,15 @@ class SessionController {
         this.session_service.getSaida().then((result:any)=>{
             successResponse('Success', result, res);
         }).catch(error=>{
-            failureResponse('Failure to get user' + error, error, res);
+            failureResponse('Failure to get saida' + error, error, res);
         })
     }
 
     createSaida(req: Request, res: Response){
         this.session_service.createSaida(req.body).then((result:any)=>{
-            successResponse('user create successful', result, res);
+            successResponse('saida create successful', result, res);
         }).catch((error: string)=>{
-            failureResponse('Failure to create authUser' + error, error, res);
+            failureResponse('Failure to create saida' + error, error, res);
         })
     }
 
