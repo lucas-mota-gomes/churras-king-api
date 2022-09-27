@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
 import { failureResponse, successResponse } from "../common/common.service";
-// import { IAuthUser, ILoginUser } from './session.model';
-import SessionService from "./saidas.service";
+// import { IAuthUser, ILoginUser } from './saidas.model';
+import SaidasService from "./saidas.service";
 // import env from '../../../environment';
 
-class SessionController {
+class SaidasController {
 
-    session_service: SessionService = new SessionService();
+    saidas_service: SaidasService = new SaidasService();
 
     getSaida(req: Request, res: Response){
-        this.session_service.getSaida().then((result:any)=>{
+        this.saidas_service.getSaida().then((result:any)=>{
             successResponse('Success', result, res);
         }).catch(error=>{
             failureResponse('Failure to get saida' + error, error, res);
@@ -17,7 +17,7 @@ class SessionController {
     }
 
     createSaida(req: Request, res: Response){
-        this.session_service.createSaida(req.body).then((result:any)=>{
+        this.saidas_service.createSaida(req.body).then((result:any)=>{
             successResponse('saida create successful', result, res);
         }).catch((error: string)=>{
             failureResponse('Failure to create saida' + error, error, res);
@@ -26,4 +26,4 @@ class SessionController {
 
 }
 
-export default SessionController;
+export default SaidasController;

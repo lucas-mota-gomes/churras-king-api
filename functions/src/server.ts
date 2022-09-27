@@ -7,6 +7,7 @@ import { SessionRoutes } from './routes/session_routes';
 import { CommonRoutes } from './routes/common_routes';
 import Swagger from '../swagger';
 import { SaidasRoutes } from "./routes/saidas_routes";
+import { ConfigRoutes } from "./routes/config_routes";
 
 class Server {
 
@@ -17,6 +18,7 @@ class Server {
   private common_routes: CommonRoutes = new CommonRoutes();
   private session_routes: SessionRoutes = new SessionRoutes();
   private saidas_routes: SaidasRoutes = new SaidasRoutes();
+  private config_routes: ConfigRoutes = new ConfigRoutes();
 
   public static bootstrap(): Server {
     return new Server();
@@ -31,6 +33,7 @@ class Server {
     this.test_routes.route(this.app);
     this.session_routes.route(this.app);
     this.saidas_routes.route(this.app);
+    this.config_routes.route(this.app);
     this.common_routes.route(this.app);
   }
 

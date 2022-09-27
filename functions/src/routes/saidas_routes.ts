@@ -1,7 +1,7 @@
 import { Application, Request, Response } from 'express';
 import * as cors from 'cors';
 import SaidasController from '../modules/saidas/saidas.controller';
-import authMiddleware from '../modules/middleware/auth.middleware';
+// import authMiddleware from '../modules/middleware/auth.middleware';
 
 export class SaidasRoutes {
 
@@ -14,7 +14,7 @@ export class SaidasRoutes {
             this.saidas_controller.createSaida(req, res);
         });
 
-        app.get('/saida', cors(), authMiddleware, (req: Request, res: Response) => {
+        app.get('/saida', cors(), (req: Request, res: Response) => {
             this.saidas_controller.getSaida(req, res);
         });
 
