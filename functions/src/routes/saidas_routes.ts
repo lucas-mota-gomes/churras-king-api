@@ -18,5 +18,17 @@ export class SaidasRoutes {
             this.saidas_controller.getSaida(req, res);
         });
 
+        app.post('/data/:collection', cors(), (req: Request, res: Response) => {
+            this.saidas_controller.createData(req, res);
+        });
+
+        app.get('/data/:collection', cors(), (req: Request, res: Response) => {
+            this.saidas_controller.getData(req, res);
+        });
+
+        app.delete('/data/:collection/:id', cors(), (req: Request, res: Response) => {
+            this.saidas_controller.deleteData(req, res);
+        });
+
     }
 }
