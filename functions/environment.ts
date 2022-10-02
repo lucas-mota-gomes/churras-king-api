@@ -17,8 +17,8 @@ enum Environments {
 class Environment {
 
     private environment: String;
-    public pocketBasteUrl = 'http://127.0.0.1:8090'
-    public client = new PocketBase('http://127.0.0.1:8090');
+    public pocketBasteUrl = 'http://168.138.155.212'
+    public client = new PocketBase('http://168.138.155.212');
     constructor(environment: String) {
         this.environment = environment;
         this.initializePocketBase().catch((error: any) =>{
